@@ -8,8 +8,9 @@ import { MapLandmarkEditor } from "@/components/map-landmark-editor"
 import { getAreaById } from "@/lib/mock-data"
 import { notFound } from "next/navigation"
 
-export default function AreaPage({ params }: { params: { areaId: string } }) {
-  const area = getAreaById(params.areaId)
+export default async function AreaPage({ params }: { params: { areaId: string } }) {
+  const { areaId } = await params
+  const area = getAreaById(areaId)
 
   if (!area) {
     notFound()
@@ -21,12 +22,12 @@ export default function AreaPage({ params }: { params: { areaId: string } }) {
         <CreateLandmarkButton />
       </DashboardHeader>
       <div className="grid gap-10">
-        <AreaMap areaId={params.areaId} />
+        <AreaMap areaId={areaId} />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <MapLandmarkEditor areaId={params.areaId} />
-          <GenerateLandmarks areaId={params.areaId} />
+          <MapLandmarkEditor areaId={areaId} />
+          <GenerateLandmarks areaId={areaId} />
         </div>
-        <LandmarkList areaId={params.areaId} />
+        <LandmarkList areaId={areaId} />
       </div>
     </DashboardShell>
   )
