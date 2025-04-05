@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 210 75% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 262 60% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 25% 40%;
+
+    --accent: 210 20% 94%;
+    --accent-foreground: 215 25% 27%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 210 75% 60%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 30% 15%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 30% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 30% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 80% 65%;
+    --primary-foreground: 222 30% 10%;
+
+    --secondary: 250 70% 75%;
+    --secondary-foreground: 222 30% 10%;
+
+    --muted: 217 20% 25%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 217 20% 25%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 20% 25%;
+    --input: 217 20% 25%;
+    --ring: 224 70% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for a brighter UI */
+.dashboard-header {
+  @apply bg-gradient-to-r from-sky-100 to-indigo-100 text-slate-700 rounded-lg p-6 mb-6 border border-slate-200;
+}
+
+.area-card {
+  @apply border border-slate-200 hover:border-sky-200 transition-all duration-300 shadow-sm hover:shadow-md;
+}
+
+.landmark-card {
+  @apply border border-slate-200 hover:border-indigo-200 transition-all duration-300 shadow-sm hover:shadow-md;
+}
+
